@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Demo jQuery</title>
+</head>
+<body>
+    <button id="btn">Click Me JS</button>
+    <button id="btnjQuery" class="btnjQuery">Click Me jQuery</button>
+
+    <script>
+        // jquery
+        // khi load xong toàn bộ body mới chạy jquery // .ready chạy ngay khi tải xong dom
+        jQuery(document).ready(function(){
+            alert("document object model load!!")
+        })
+
+        // $(window).load(function(){
+        //     alert("window load!!")
+        // })
+
+        // khi bấm vào nút hiện thông báo trong jquery
+        // jQuery("Selector").Event(function(){} || callback) // các loại selector : className || tagName || Id || Attribute || Value Attribute
+        // cách 1 (từ khóa jQuery có thể thay bằng dấu $)
+        jQuery("#btnjQuery").click(function(){
+            alert("this is jQuery");
+        })
+        //  cách 2
+        var btnjQuery = $("#btnjQuery");
+        $("#btnjQuery").click(function(){
+            alert("this is jQuery");
+            // method .css("attribute" , "value")
+            $("#btnjQuery").css("background-color","yellow");
+            btnjQuery.css("color","red");
+        })
+
+        // js
+        // khi bấm vào nút hiện thông báo trong js
+        var btnJS = document.getElementById("btn");
+        btnJS.addEventListener("click", function(){
+            alert("this is JS");
+        })
+    </script>
+</body>
+</html>
